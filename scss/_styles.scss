@@ -1,0 +1,106 @@
+body {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 59, 59, 1) 0%,
+    rgba(24, 24, 23, 1) 100%
+  );
+  background-size: 1980px;
+  background-position: 50% 50%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 1680px;
+  //background: rgba(40, 40, 40, 0.8);
+
+  // height: 500px;
+  margin: auto;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  @include media(">=700px") {
+    width: initial;
+  }
+  @include media(">=1280px") {
+    width: 100%;
+    flex-direction: row;
+  }
+}
+.car-section {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  height: 100vh;
+  @include media(">=1280px") {
+    overflow: visible;
+    height: auto;
+    min-width: 400px;
+  }
+  img {
+    width: 166vw;
+    display: block;
+    @include media(">=700px") {
+      width: auto;
+      height: 100vh;
+    }
+    @include media(">=1280px") {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+.content-data {
+  height: 100vh;
+  background: url(../../images/pad2.png);
+
+  width: 100%;
+  &:before {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 66%,
+      rgba(255, 79, 0, 0.08) 100%
+    );
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    z-index: 1;
+  }
+  &:after {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(62, 62, 62, 0.85) 0%,
+      rgba(30, 30, 30, 0.15) 100%
+    );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+  @include media(">=1280px") {
+    height: auto;
+    min-width: 780px;
+    max-width: 840px;
+    position: relative;
+    z-index: 100;
+  }
+}
